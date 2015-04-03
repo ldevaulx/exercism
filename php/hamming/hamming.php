@@ -7,20 +7,17 @@
 
 function distance($a, $b)
 {
-    $tab_a = str_split ($a);
-    $tab_b = str_split ($b);
-    $length = count($tab_a);
-    if ($length != count($tab_b)) {
+    $length = strlen($a);
+    if ($length != strlen($b)) {
         throw new InvalidArgumentException('DNA strands must be of equal length.', 1);
     }
 
-    $err = 0;
-
+    $distance = 0;
     for ($i=0;$i<$length; $i++) {
-        if ($tab_a[$i] !== $tab_b[$i]) {
-            $err++;
+        if ($a[$i] != $b[$i]) {
+            $distance++;
         }
     }
 
-    return $err;
+    return $distance;
 }
