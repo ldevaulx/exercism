@@ -12,10 +12,6 @@ function raindrops($nb)
             $res .= $val;
     }
 
-    if ($res === '') {
-        $res .= $nb;
-    }
-
-    return $res;
+    return empty($res) ? (string)$nb : $res;
 
 }
